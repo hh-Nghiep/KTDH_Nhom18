@@ -10,6 +10,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
@@ -17,14 +18,13 @@ import javax.swing.JPanel;
  *
  * @author admin
  */
-public class Project extends javax.swing.JFrame{
+public class Project extends javax.swing.JFrame {
 
     private Graphics g3D;
     private int step = 40; // Ti le: 1 don vi = 40 pixel 
     private int height; // Chieu cao cua Panel
     private int width; // Chieu dai cua Panel
-    
-    
+
     public Project() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -93,16 +93,21 @@ public class Project extends javax.swing.JFrame{
         quayLaiHC_Btn = new javax.swing.JButton();
         veHC_Btn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        panel2D = new javax.swing.JPanel();
+        HHCN_Btn1 = new javax.swing.JButton();
+        HHCN_Btn2 = new javax.swing.JButton();
+        HHCN_Btn3 = new javax.swing.JButton();
+        xoaManHinh_Btn1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel3D.setBackground(new java.awt.Color(255, 255, 255));
         panel3D.setPreferredSize(new java.awt.Dimension(900, 300));
         panel3D.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 panel3DAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -228,7 +233,7 @@ public class Project extends javax.swing.JFrame{
                 .addContainerGap()
                 .addGroup(HLP_PnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(doDaiCanhHLP_TF)
-                    .addComponent(veHLP_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(quayLai_Btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(HLP_PnLayout.createSequentialGroup()
                         .addGroup(HLP_PnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(doDaiCanhHLP_Lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,7 +251,7 @@ public class Project extends javax.swing.JFrame{
                                     .addComponent(zOHLP_Lbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(zOHLP_TF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(quayLai_Btn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(veHLP_Btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         HLP_PnLayout.setVerticalGroup(
@@ -276,7 +281,7 @@ public class Project extends javax.swing.JFrame{
                 .addComponent(veHLP_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(quayLai_Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         tuyChon_LPn.add(HLP_Pn, "card2");
@@ -518,9 +523,8 @@ public class Project extends javax.swing.JFrame{
                         .addContainerGap()
                         .addComponent(xoaManHinh_Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(tuyChon_LPn, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel3D, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(panel3D, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,15 +542,94 @@ public class Project extends javax.swing.JFrame{
 
         jTabbedPane1.addTab("3D", jPanel1);
 
+        panel2D.setBackground(new java.awt.Color(255, 255, 255));
+        panel2D.setPreferredSize(new java.awt.Dimension(900, 300));
+        panel2D.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                panel2DAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        javax.swing.GroupLayout panel2DLayout = new javax.swing.GroupLayout(panel2D);
+        panel2D.setLayout(panel2DLayout);
+        panel2DLayout.setHorizontalGroup(
+            panel2DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        panel2DLayout.setVerticalGroup(
+            panel2DLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        HHCN_Btn1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HHCN_Btn1.setText("Hình Cầu");
+        HHCN_Btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HHCN_Btn1ActionPerformed(evt);
+            }
+        });
+
+        HHCN_Btn2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HHCN_Btn2.setText("Hình Lập Phương");
+        HHCN_Btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HHCN_Btn2ActionPerformed(evt);
+            }
+        });
+
+        HHCN_Btn3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HHCN_Btn3.setText("Hình Xe");
+        HHCN_Btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HHCN_Btn3ActionPerformed(evt);
+            }
+        });
+
+        xoaManHinh_Btn1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        xoaManHinh_Btn1.setText("Xóa màn hình");
+        xoaManHinh_Btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaManHinh_Btn1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1191, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(xoaManHinh_Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(HHCN_Btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HHCN_Btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HHCN_Btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panel2D, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 582, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panel2D, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(152, 152, 152)
+                .addComponent(HHCN_Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(HHCN_Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(HHCN_Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(xoaManHinh_Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane1.addTab("2D", jPanel2);
@@ -567,22 +650,33 @@ public class Project extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void panel3DAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_panel3DAncestorAdded
-        draw3DCoordinate();
-        //drawGrid();
-    }//GEN-LAST:event_panel3DAncestorAdded
+    private void veHC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veHC_BtnActionPerformed
+        drawGlobular();
+    }//GEN-LAST:event_veHC_BtnActionPerformed
+
+    private void quayLaiHC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLaiHC_BtnActionPerformed
+        changePanel(tuyChon_LPn, tuyChon_Pn);
+    }//GEN-LAST:event_quayLaiHC_BtnActionPerformed
+
+    private void quayLai_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLai_BtnActionPerformed
+        changePanel(tuyChon_LPn, tuyChon_Pn);
+    }//GEN-LAST:event_quayLai_BtnActionPerformed
 
     private void veHHCN_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veHHCN_BtnActionPerformed
         drawRectangular();
     }//GEN-LAST:event_veHHCN_BtnActionPerformed
 
-    private void xoaManHinh_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaManHinh_BtnActionPerformed
-        clear();
-    }//GEN-LAST:event_xoaManHinh_BtnActionPerformed
+    private void quayLai_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLai_Btn1ActionPerformed
+        changePanel(tuyChon_LPn, tuyChon_Pn);
+    }//GEN-LAST:event_quayLai_Btn1ActionPerformed
 
     private void veHLP_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veHLP_BtnActionPerformed
         drawCube();
     }//GEN-LAST:event_veHLP_BtnActionPerformed
+
+    private void HLP_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HLP_Btn1ActionPerformed
+        changePanel(tuyChon_LPn, HC_Pn);
+    }//GEN-LAST:event_HLP_Btn1ActionPerformed
 
     private void HHCN_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCN_BtnActionPerformed
         changePanel(tuyChon_LPn, HHCN_Pn);
@@ -592,25 +686,36 @@ public class Project extends javax.swing.JFrame{
         changePanel(tuyChon_LPn, HLP_Pn);
     }//GEN-LAST:event_HLP_BtnActionPerformed
 
-    private void quayLai_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLai_BtnActionPerformed
-        changePanel(tuyChon_LPn, tuyChon_Pn);
-    }//GEN-LAST:event_quayLai_BtnActionPerformed
+    private void xoaManHinh_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaManHinh_BtnActionPerformed
+        clear();
+    }//GEN-LAST:event_xoaManHinh_BtnActionPerformed
 
-    private void quayLai_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLai_Btn1ActionPerformed
-        changePanel(tuyChon_LPn, tuyChon_Pn);
-    }//GEN-LAST:event_quayLai_Btn1ActionPerformed
+    private void panel3DAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_panel3DAncestorAdded
+        draw3DCoordinate();
+        //drawGrid();
+    }//GEN-LAST:event_panel3DAncestorAdded
 
-    private void HLP_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HLP_Btn1ActionPerformed
-        changePanel(tuyChon_LPn, HC_Pn);
-    }//GEN-LAST:event_HLP_Btn1ActionPerformed
+    private void panel2DAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_panel2DAncestorAdded
+        // TODO add your handling code here:
+        draw2DCoordinate();
+    }//GEN-LAST:event_panel2DAncestorAdded
 
-    private void veHC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veHC_BtnActionPerformed
-        drawGlobular();
-    }//GEN-LAST:event_veHC_BtnActionPerformed
+    private void HHCN_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCN_Btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HHCN_Btn1ActionPerformed
 
-    private void quayLaiHC_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quayLaiHC_BtnActionPerformed
-        changePanel(tuyChon_LPn, tuyChon_Pn);
-    }//GEN-LAST:event_quayLaiHC_BtnActionPerformed
+    private void HHCN_Btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCN_Btn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HHCN_Btn2ActionPerformed
+
+    private void HHCN_Btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HHCN_Btn3ActionPerformed
+        // TODO add your handling code here:
+        drawCar();
+    }//GEN-LAST:event_HHCN_Btn3ActionPerformed
+
+    private void xoaManHinh_Btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xoaManHinh_Btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xoaManHinh_Btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -638,261 +743,7 @@ public class Project extends javax.swing.JFrame{
             java.util.logging.Logger.getLogger(Project.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -905,6 +756,9 @@ public class Project extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HC_Pn;
     private javax.swing.JButton HHCN_Btn;
+    private javax.swing.JButton HHCN_Btn1;
+    private javax.swing.JButton HHCN_Btn2;
+    private javax.swing.JButton HHCN_Btn3;
     private javax.swing.JPanel HHCN_Pn;
     private javax.swing.JButton HLP_Btn;
     private javax.swing.JButton HLP_Btn1;
@@ -920,6 +774,7 @@ public class Project extends javax.swing.JFrame{
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel panel2D;
     private javax.swing.JPanel panel3D;
     private javax.swing.JButton quayLaiHC_Btn;
     private javax.swing.JButton quayLai_Btn;
@@ -941,6 +796,7 @@ public class Project extends javax.swing.JFrame{
     private javax.swing.JLabel xOHLP_Lbl;
     private javax.swing.JTextField xOHLP_TF;
     private javax.swing.JButton xoaManHinh_Btn;
+    private javax.swing.JButton xoaManHinh_Btn1;
     private javax.swing.JLabel yOHC_Lbl;
     private javax.swing.JTextField yOHC_TF;
     private javax.swing.JLabel yOHHCN_Lbl;
@@ -955,105 +811,92 @@ public class Project extends javax.swing.JFrame{
     private javax.swing.JTextField zOHLP_TF;
     // End of variables declaration//GEN-END:variables
 
-    public void changePanel(JLayeredPane jLayeredPane,JPanel panel){
+    public void changePanel(JLayeredPane jLayeredPane, JPanel panel) {
         jLayeredPane.removeAll();
         jLayeredPane.add(panel);
         jLayeredPane.repaint();
         jLayeredPane.revalidate();
-    }    
-    
-    public void clear()
-    {
-        Graphics2D g1 = (Graphics2D)g3D.create();
+    }
+
+    public void clear() {
+        Graphics2D g1 = (Graphics2D) g3D.create();
         g1.clearRect(0, 0, width, height);
 //        panel3D.setBackground(Color.white);
-        g3D = panel3D.getGraphics();       
+        g3D = panel3D.getGraphics();
         draw3DCoordinate();
         //drawGrid();
     }
-    
-    public void draw3DCoordinate()
-    {
-        height = panel3D.getBounds().height; // Lay chieu cao cua Panel
-        width = panel3D.getBounds().width; // Lay chieu dai cua Panel
-        
-        Graphics2D g1 = (Graphics2D)g3D.create();
+
+    public void draw2DCoordinate() {
+        height = panel2D.getBounds().height; // Lay chieu cao cua Panel
+        width = panel2D.getBounds().width; // Lay chieu dai cua Panel
+
+        Graphics2D g1 = (Graphics2D) g3D.create();
         g1.setStroke(new BasicStroke(3));
         g1.setColor(Color.BLACK);
-        g1.drawLine(width/2, height/2, width, height/2); // Ve truc Ox
-        g1.drawLine(width/2, 0, width/2, height/2); // Ve truc Oz       
-        g1.drawLine(width/2, height/2, 0, width/2 + height/2); // Ve truc Oy
+        g1.drawLine(0, height / 2, width, height / 2); // Ve truc Ox
+        g1.drawLine(width / 2, 0, width / 2, height); // Ve truc Oy       
 
-        int x1 = 4;
-        for (int i = 0 ; i <= width/2; i++)
-        {
-            if (i % (3*x1) == 2*x1)
-            {
-                g1.drawLine(i, height/2, i - 2*x1, height/2); // Ox'
-            }
-        }
-        for (int i = height + 1 ; i >= height/2; i--)
-        {
-            int x = height - i;
-            if (x % (3*x1) == 2*x1)
-            {
-                g1.drawLine(width/2, i, width/2, i - 2*x1); // Oy'
-            }
-        }        
-        for (int i = width/2 ; i <= width; i++)
-        {
-            int x = i - width/2;
-            if (x % (3*x1) == 2*x1)
-            {
-                g1.drawLine(i, height/2 - x, i - 2*x1, height/2 - (x - 2*x1)); // Oz'
-            }
-        }        
-        
-//        int inc = 1; // Don vi duong
-//        int desc = -1; // Don vi am        
-//        for (int i = 0; i < width; i += step) 
-//        {
-//            g3D.setColor(Color.BLACK);
-//            g3D.drawLine(width/2 + i, height/2 - 2, width/2 + i, height/2 + 2); // Ve cac gach cua Ox
-//            g3D.drawLine(width/2 - i, height/2 - 2, width/2 - i, height/2 + 2); // Ve cac gach cua Ox'
-//            g3D.drawLine(width/2 - 2, height/2 - i, width/2 + 2, height/2 - i); // Ve cac gach cua Oy
-//            g3D.drawLine(width/2 - 2, height/2 + i, width/2 + 2, height/2 + i); // Ve cac gach cua Oy'
-//            
-//            
-//            g3D.setColor(Color.BLUE);
-//            g3D.drawString(String.valueOf(inc), width/2 + i + step - 3, height/2 + 15); // Danh so don vi cho Ox
-//            g3D.drawString(String.valueOf(desc), width/2 - i - step - 7, height/2 + 15); // Danh so don vi cho Ox'
-//            g3D.drawString(String.valueOf(inc), width/2 - 15, height/2 - i - step + 5); // Danh so don vi cho Oy
-//            g3D.drawString(String.valueOf(desc), width/2 - 15, height/2 + i + step + 5); // Danh so don vi cho Oy'
-//            
-//            inc++;
-//            desc--;         
-//        }    
         g1.setColor(Color.blue);
         g1.setFont(new Font("Arial", Font.BOLD, 18));
-        g1.drawString("x", width - 20, height/2 - 10);
-        g1.drawString("z", width/2 + 10, 0 + 10);
-        g1.drawString("O", width/2 - 18, height/2 - 4);      
-        g1.drawString("y", width/4 - 10, height - 5);
+        g1.drawString("x", width - 20, height / 2 - 10);
+        g1.drawString("y", width / 2 + 10, 0 + 10);
+        g1.drawString("O", width / 2 - 18, height / 2 - 4);
+        g1.drawArc(1, 1, 3, 4, 5, 6);
     }
-    
-    
+
+    public void draw3DCoordinate() {
+        height = panel3D.getBounds().height; // Lay chieu cao cua Panel
+        width = panel3D.getBounds().width; // Lay chieu dai cua Panel
+
+        Graphics2D g1 = (Graphics2D) g3D.create();
+        g1.setStroke(new BasicStroke(3));
+        g1.setColor(Color.BLACK);
+        g1.drawLine(width / 2, height / 2, width, height / 2); // Ve truc Ox
+        g1.drawLine(width / 2, 0, width / 2, height / 2); // Ve truc Oz       
+        g1.drawLine(width / 2, height / 2, 0, width / 2 + height / 2); // Ve truc Oy
+
+        int x1 = 4;
+        for (int i = 0; i <= width / 2; i++) {
+            if (i % (3 * x1) == 2 * x1) {
+                g1.drawLine(i, height / 2, i - 2 * x1, height / 2); // Ox'
+            }
+        }
+        for (int i = height + 1; i >= height / 2; i--) {
+            int x = height - i;
+            if (x % (3 * x1) == 2 * x1) {
+                g1.drawLine(width / 2, i, width / 2, i - 2 * x1); // Oy'
+            }
+        }
+        for (int i = width / 2; i <= width; i++) {
+            int x = i - width / 2;
+            if (x % (3 * x1) == 2 * x1) {
+                g1.drawLine(i, height / 2 - x, i - 2 * x1, height / 2 - (x - 2 * x1)); // Oz'
+            }
+        }
+
+        g1.setColor(Color.blue);
+        g1.setFont(new Font("Arial", Font.BOLD, 18));
+        g1.drawString("x", width - 20, height / 2 - 10);
+        g1.drawString("z", width / 2 + 10, 0 + 10);
+        g1.drawString("O", width / 2 - 18, height / 2 - 4);
+        g1.drawString("y", width / 4 - 10, height - 5);
+    }
+
     // De khong bi mat do thi khi zoom len hay di chuyen frame
     @Override
-    public void paint(Graphics g) 
-    {
+    public void paint(Graphics g) {
         super.paint(g);
         draw3DCoordinate();
         //drawGrid();
     }
-        
-    public void putPixel(double x, double y)
-    {       
+
+    public void putPixel(double x, double y) {
         Graphics2D g1 = (Graphics2D) g3D.create();
         g1.setColor(Color.BLACK);
-        g1.fillRect((int)x, (int)y, 3,3);       
-    }    
-    
+        g1.fillRect((int) x, (int) y, 3, 3);
+    }
+
     public void put4Pixel(double xO, double yO, double x, double y) // Ve ellipse
     {
         putPixel(xO + x, yO + y);
@@ -1061,7 +904,7 @@ public class Project extends javax.swing.JFrame{
         putPixel(xO + x, yO - y);
         putPixel(xO - x, yO - y);
     }
-    
+
     public void put8Pixel(double xO, double yO, double x, double y) // Ve duong tron
     {
         putPixel(xO + x, yO + y); // (x,y)
@@ -1072,228 +915,200 @@ public class Project extends javax.swing.JFrame{
         putPixel(xO - y, yO + x); // (-y, x)
         putPixel(xO + y, yO - x); // (y, -x)
         putPixel(xO - y, yO - x); // (-y -x)
-    }      
-    
-    public void putPixel3D(double x, double y)
-    {       
+    }
+
+    public void putPixel3D(double x, double y) {
         Graphics2D g1 = (Graphics2D) g3D.create();
         g1.setColor(Color.RED);
-        
+
         // Dua ve goc toa do
-        double newX = x*step + width/2;
-        double newY = height/2 - y*step;
-                
-        g1.fillRect((int)newX, (int)newY, 4, 4);       
-    }  
-    
-    public void putText3D(String pointName, int x, int y, int z)
-    {
+        double newX = x * step + width / 2;
+        double newY = height / 2 - y * step;
+
+        g1.fillRect((int) newX, (int) newY, 4, 4);
+    }
+
+    public void putText3D(String pointName, int x, int y, int z) {
         Graphics2D g1 = (Graphics2D) g3D.create();
-        
-        double newX, newY;  
-        newX =  cavalierProjection(x, y)*step + width/2; 
-        newY = height/2 - cavalierProjection(z, y)*step; 
-               
+
+        double newX, newY;
+        newX = cavalierProjection(x, y) * step + width / 2;
+        newY = height / 2 - cavalierProjection(z, y) * step;
+
         g1.setColor(Color.red);
         g1.setFont(new Font("Arial", Font.BOLD, 18));
-        g1.drawString(pointName + "(" + x + "," + y + "," + z + ")",(int)newX + 5,(int)newY + 10);
-    }        
-    
-    public double cavalierProjection(double a, double b)
-    {
+        g1.drawString(pointName + "(" + x + "," + y + "," + z + ")", (int) newX + 5, (int) newY + 10);
+    }
+
+    public double cavalierProjection(double a, double b) {
         // Chieu len truc Oxz
-        return a - b*(1-Math.sqrt(2)/2);
-    }      
-    
-    public void drawGrid()
-    {
-        Graphics2D g1 = (Graphics2D)g3D.create();
+        return a - b * (1 - Math.sqrt(2) / 2);
+    }
+
+    public void drawGrid() {
+        Graphics2D g1 = (Graphics2D) g3D.create();
         g1.setColor(Color.black);
-        
+
         // Luoi doc
-        for (int x = 0; x < width; x += step)
-        {
+        for (int x = 0; x < width; x += step) {
             g1.drawLine(x, 0, x, height);
         }
 
         // Luoi ngang
-        for (int y = 0; y < height; y += step)
-        {
+        for (int y = 0; y < height; y += step) {
             g1.drawLine(0, y, width, y);
         }
     }
 
-    public void drawLineDDA(double x1, double y1, double x2, double y2)
-    {   
+    public void drawLineDDA(double x1, double y1, double x2, double y2) {
         // Dua ve tam toa do
-        x1 = x1*this.step + width/2;
-        y1 = height/2 - y1*this.step;        
-        x2 = x2*this.step + width/2;
-        y2 = height/2 - y2*this.step;           
-        
+        x1 = x1 * this.step + width / 2;
+        y1 = height / 2 - y1 * this.step;
+        x2 = x2 * this.step + width / 2;
+        y2 = height / 2 - y2 * this.step;
+
         double dx = x2 - x1;
-        double dy = y2 - y1;  
+        double dy = y2 - y1;
         double step;
-        if(Math.abs(dx) >= Math.abs(dy))
-        {
+        if (Math.abs(dx) >= Math.abs(dy)) {
             step = Math.abs(dx);
-        } 
-        else
-        {
+        } else {
             step = Math.abs(dy);
         }
-        double x_inc = dx/step;
-        double y_inc = dy/step;
-        
+        double x_inc = dx / step;
+        double y_inc = dy / step;
+
         double x = x1;
         double y = y1;
         putPixel(x, y);
 
-        for (int i = 0; i <= step; i++)
-        {
+        for (int i = 0; i <= step; i++) {
             x = x + x_inc;
             y = y + y_inc;
             putPixel(Math.round(x), Math.round(y));
         }
     }
-   
-    public void drawDashedLineDDA(double x1, double y1, double x2, double y2)
-    {   
+
+    public void drawDashedLineDDA(double x1, double y1, double x2, double y2) {
         // Dua ve tam toa do
-        x1 = x1*this.step + width/2;
-        y1 = height/2 - y1*this.step;        
-        x2 = x2*this.step + width/2;
-        y2 = height/2 - y2*this.step;           
-        
+        x1 = x1 * this.step + width / 2;
+        y1 = height / 2 - y1 * this.step;
+        x2 = x2 * this.step + width / 2;
+        y2 = height / 2 - y2 * this.step;
+
         double dx = x2 - x1;
-        double dy = y2 - y1;  
+        double dy = y2 - y1;
         double step;
-        if(Math.abs(dx) >= Math.abs(dy))
-        {
+        if (Math.abs(dx) >= Math.abs(dy)) {
             step = Math.abs(dx);
-        } 
-        else
-        {
+        } else {
             step = Math.abs(dy);
         }
-        double x_inc = dx/step;
-        double y_inc = dy/step;
-        
+        double x_inc = dx / step;
+        double y_inc = dy / step;
+
         double x = x1;
         double y = y1;
         putPixel(x, y);
 
         // Dem so pixel da put. Khi dat den 1 so luong nhat dinh thi ngung khong put nua
         int count = 0;
-        for (int i = 0; i <= step; i++)
-        {
+        for (int i = 0; i <= step; i++) {
             count++;
             x = x + x_inc;
             y = y + y_inc;
             if (count >= 11 && count <= 15) // Neu da put du 10 pixel thi 5 pixel tiep theo khong put (x, y van tiep tuc tang)
             {
-                if (count == 15)
-                {
+                if (count == 15) {
                     count = 0; // Lap lai viec put pixel
                 }
                 continue;
-            }            
+            }
             putPixel(Math.round(x), Math.round(y));
         }
     }
-    
-    public void drawDDAWithCondition(double x1, double y1, double x2, double y2, String circumstance)
-    {
-        if (circumstance.equals("Straight"))
-        {
-            if (x1 > x2)
-            {
+
+    public void drawDDAWithCondition(double x1, double y1, double x2, double y2, String circumstance) {
+        if (circumstance.equals("Straight")) {
+            if (x1 > x2) {
                 drawLineDDA(x2, y2, x1, y1);
+            } else {
+                drawLineDDA(x1, y1, x2, y2);
             }
-            else
-            {
-               drawLineDDA(x1, y1, x2, y2);
-            }        
-        }
-        else if (circumstance.equals("Dashed"))
-        {
-            if (x1 > x2)
-            {
+        } else if (circumstance.equals("Dashed")) {
+            if (x1 > x2) {
                 drawDashedLineDDA(x2, y2, x1, y1);
-            }
-            else
-            {
+            } else {
                 drawDashedLineDDA(x1, y1, x2, y2);
-            }                 
+            }
         }
     }
-    
-    public void drawRectangular()
-    {
+
+    public void drawRectangular() {
         // Diem goc O
         double xO = Double.valueOf(xOHHCN_TF.getText());
         double yO = Double.valueOf(yOHHCN_TF.getText());
-        double zO = Double.valueOf(zOHHCN_TF.getText());      
-        
+        double zO = Double.valueOf(zOHHCN_TF.getText());
+
         double xO1 = cavalierProjection(xO, yO);
         double yO1 = cavalierProjection(zO, yO);
-        
+
         // A
         double xA = Double.valueOf(dai_TF.getText()) + xO;
         double yA = 0 + yO;
         double zA = 0 + zO;
-        
+
         double xA1 = cavalierProjection(xA, yA);
         double yA1 = cavalierProjection(zA, yA);
-        
+
         // B
         double xB = Double.valueOf(dai_TF.getText()) + xO;
         double yB = Double.valueOf(rong_TF.getText()) + yO;
         double zB = 0 + zO;
-        
+
         double xB1 = cavalierProjection(xB, yB);
         double yB1 = cavalierProjection(zB, yB);
-        
+
         // C
         double xC = 0 + xO;
         double yC = Double.valueOf(rong_TF.getText()) + yO;
         double zC = 0 + zO;
-        
+
         double xC1 = cavalierProjection(xC, yC);
         double yC1 = cavalierProjection(zC, yC);
-        
+
         // D
         double xD = Double.valueOf(dai_TF.getText()) + xO;
         double yD = 0 + yO;
         double zD = Double.valueOf(cao_TF.getText()) + zO;
-        
+
         double xD1 = cavalierProjection(xD, yD);
-        double yD1 = cavalierProjection(zD, yD);    
-        
+        double yD1 = cavalierProjection(zD, yD);
+
         // E 
         double xE = 0 + xO;
         double yE = 0 + yO;
         double zE = Double.valueOf(cao_TF.getText()) + zO;
-        
+
         double xE1 = cavalierProjection(xE, yE);
-        double yE1 = cavalierProjection(zE, yE);    
-        
+        double yE1 = cavalierProjection(zE, yE);
+
         // F
         double xF = 0 + xO;
         double yF = Double.valueOf(rong_TF.getText()) + yO;
         double zF = Double.valueOf(cao_TF.getText()) + zO;
-        
+
         double xF1 = cavalierProjection(xF, yF);
-        double yF1 = cavalierProjection(zF, yF);      
-        
+        double yF1 = cavalierProjection(zF, yF);
+
         // G
         double xG = Double.valueOf(dai_TF.getText()) + xO;
         double yG = Double.valueOf(rong_TF.getText()) + yO;
         double zG = Double.valueOf(cao_TF.getText()) + zO;
-        
+
         double xG1 = cavalierProjection(xG, yG);
-        double yG1 = cavalierProjection(zG, yG);        
-           
+        double yG1 = cavalierProjection(zG, yG);
+
         putPixel3D(xO1, yO1);
         putPixel3D(xA1, yA1);
         putPixel3D(xB1, yB1);
@@ -1302,16 +1117,16 @@ public class Project extends javax.swing.JFrame{
         putPixel3D(xE1, yE1);
         putPixel3D(xF1, yF1);
         putPixel3D(xG1, yG1);
-        
-        putText3D("O", (int)xO, (int)yO, (int)zO); 
-        putText3D("A", (int)xA, (int)yA, (int)zA);        
-        putText3D("B", (int)xB, (int)yB, (int)zB);   
-        putText3D("C", (int)xC, (int)yC, (int)zC); 
-        putText3D("D", (int)xD, (int)yD, (int)zD);
-        putText3D("E", (int)xE, (int)yE, (int)zE);
-        putText3D("F", (int)xF, (int)yF, (int)zF);
-        putText3D("G", (int)xG, (int)yG, (int)zG); 
-        
+
+        putText3D("O", (int) xO, (int) yO, (int) zO);
+        putText3D("A", (int) xA, (int) yA, (int) zA);
+        putText3D("B", (int) xB, (int) yB, (int) zB);
+        putText3D("C", (int) xC, (int) yC, (int) zC);
+        putText3D("D", (int) xD, (int) yD, (int) zD);
+        putText3D("E", (int) xE, (int) yE, (int) zE);
+        putText3D("F", (int) xF, (int) yF, (int) zF);
+        putText3D("G", (int) xG, (int) yG, (int) zG);
+
         drawDDAWithCondition(xA1, yA1, xB1, yB1, "Straight"); // AB
         drawDDAWithCondition(xA1, yA1, xD1, yD1, "Straight"); // AD
         drawDDAWithCondition(xB1, yB1, xC1, yC1, "Straight"); // BC
@@ -1321,78 +1136,77 @@ public class Project extends javax.swing.JFrame{
         drawDDAWithCondition(xE1, yE1, xF1, yF1, "Straight"); // EF        
         drawDDAWithCondition(xE1, yE1, xD1, yD1, "Straight"); // ED        
         drawDDAWithCondition(xF1, yF1, xG1, yG1, "Straight"); // FG
-        
+
         drawDDAWithCondition(xO1, yO1, xC1, yC1, "Dashed"); // OC
         drawDDAWithCondition(xO1, yO1, xA1, yA1, "Dashed"); // OA
         drawDDAWithCondition(xO1, yO1, xE1, yE1, "Dashed"); // EO
-    }  
-    
-    public void drawCube()
-    {
+    }
+
+    public void drawCube() {
         // Diem goc O
         double xO = Double.valueOf(xOHLP_TF.getText());
         double yO = Double.valueOf(yOHLP_TF.getText());
-        double zO = Double.valueOf(zOHLP_TF.getText());              
-  
+        double zO = Double.valueOf(zOHLP_TF.getText());
+
         double xO1 = cavalierProjection(xO, yO);
-        double yO1 = cavalierProjection(zO, yO);        
-        
+        double yO1 = cavalierProjection(zO, yO);
+
         // A
         double xA = Double.valueOf(doDaiCanhHLP_TF.getText()) + xO;
         double yA = 0 + yO;
         double zA = 0 + zO;
-        
+
         double xA1 = cavalierProjection(xA, yA);
         double yA1 = cavalierProjection(zA, yA);
-        
+
         // B
         double xB = Double.valueOf(doDaiCanhHLP_TF.getText()) + xO;
         double yB = Double.valueOf(doDaiCanhHLP_TF.getText()) + yO;
         double zB = 0 + zO;
-        
+
         double xB1 = cavalierProjection(xB, yB);
         double yB1 = cavalierProjection(zB, yB);
-        
+
         // C
         double xC = 0 + xO;
         double yC = Double.valueOf(doDaiCanhHLP_TF.getText()) + yO;
         double zC = 0 + zO;
-        
+
         double xC1 = cavalierProjection(xC, yC);
         double yC1 = cavalierProjection(zC, yC);
-        
+
         // D
         double xD = Double.valueOf(doDaiCanhHLP_TF.getText()) + xO;
         double yD = 0 + yO;
         double zD = Double.valueOf(doDaiCanhHLP_TF.getText()) + zO;
-        
+
         double xD1 = cavalierProjection(xD, yD);
-        double yD1 = cavalierProjection(zD, yD);    
-        
+        double yD1 = cavalierProjection(zD, yD);
+
         // E 
         double xE = 0 + xO;
         double yE = 0 + yO;
         double zE = Double.valueOf(doDaiCanhHLP_TF.getText()) + zO;
-        
+
         double xE1 = cavalierProjection(xE, yE);
-        double yE1 = cavalierProjection(zE, yE);    
-        
+        double yE1 = cavalierProjection(zE, yE);
+
         // F
         double xF = 0 + xO;
         double yF = Double.valueOf(doDaiCanhHLP_TF.getText()) + yO;
         double zF = Double.valueOf(doDaiCanhHLP_TF.getText()) + zO;
-        
+
         double xF1 = cavalierProjection(xF, yF);
-        double yF1 = cavalierProjection(zF, yF);      
-        
+        double yF1 = cavalierProjection(zF, yF);
+
         // G
         double xG = Double.valueOf(doDaiCanhHLP_TF.getText()) + xO;
         double yG = Double.valueOf(doDaiCanhHLP_TF.getText()) + yO;
         double zG = Double.valueOf(doDaiCanhHLP_TF.getText()) + zO;
-        
+
         double xG1 = cavalierProjection(xG, yG);
-        double yG1 = cavalierProjection(zG, yG);        
-           
+        double yG1 = cavalierProjection(zG, yG);
+
         putPixel3D(xO1, yO1);
         putPixel3D(xA1, yA1);
         putPixel3D(xB1, yB1);
@@ -1401,16 +1215,16 @@ public class Project extends javax.swing.JFrame{
         putPixel3D(xE1, yE1);
         putPixel3D(xF1, yF1);
         putPixel3D(xG1, yG1);
-        
-        putText3D("O", (int)xO, (int)yO, (int)zO); 
-        putText3D("A", (int)xA, (int)yA, (int)zA);        
-        putText3D("B", (int)xB, (int)yB, (int)zB);   
-        putText3D("C", (int)xC, (int)yC, (int)zC); 
-        putText3D("D", (int)xD, (int)yD, (int)zD);
-        putText3D("E", (int)xE, (int)yE, (int)zE);
-        putText3D("F", (int)xF, (int)yF, (int)zF);
-        putText3D("G", (int)xG, (int)yG, (int)zG); 
-        
+
+        putText3D("O", (int) xO, (int) yO, (int) zO);
+        putText3D("A", (int) xA, (int) yA, (int) zA);
+        putText3D("B", (int) xB, (int) yB, (int) zB);
+        putText3D("C", (int) xC, (int) yC, (int) zC);
+        putText3D("D", (int) xD, (int) yD, (int) zD);
+        putText3D("E", (int) xE, (int) yE, (int) zE);
+        putText3D("F", (int) xF, (int) yF, (int) zF);
+        putText3D("G", (int) xG, (int) yG, (int) zG);
+
         drawDDAWithCondition(xA1, yA1, xB1, yB1, "Straight"); // AB
         drawDDAWithCondition(xA1, yA1, xD1, yD1, "Straight"); // AD
         drawDDAWithCondition(xB1, yB1, xC1, yC1, "Straight"); // BC
@@ -1420,132 +1234,138 @@ public class Project extends javax.swing.JFrame{
         drawDDAWithCondition(xE1, yE1, xF1, yF1, "Straight"); // EF        
         drawDDAWithCondition(xE1, yE1, xD1, yD1, "Straight"); // ED        
         drawDDAWithCondition(xF1, yF1, xG1, yG1, "Straight"); // FG
-        
+
         drawDDAWithCondition(xO1, yO1, xC1, yC1, "Dashed"); // OC
         drawDDAWithCondition(xO1, yO1, xA1, yA1, "Dashed"); // OA
         drawDDAWithCondition(xO1, yO1, xE1, yE1, "Dashed"); // EO        
     }
-    
-    public void drawCircleMidPoint(double xO, double yO, double r)
-    {
-        xO = xO*step + width/2;
-        yO = height/2 - yO*step;
-        r = r*step;
-        
+
+    public void drawCircleMidPoint(double xO, double yO, double r) {
+        xO = xO * step + width / 2;
+        yO = height / 2 - yO * step;
+        r = r * step;
+
         double x = 0;
         double y = r;
         double p = 1 - r;
 
         put8Pixel(xO, yO, x, y);
 
-        while (x < y)
-        {           
-            if (p < 0)
-            {
-                p += 2*x + 3;
-            }
-            else
-            {
-                p += 2*(x-y) + 5;
+        while (x < y) {
+            if (p < 0) {
+                p += 2 * x + 3;
+            } else {
+                p += 2 * (x - y) + 5;
                 y--;
             }
             x++;
-            put8Pixel(xO, yO, x, y);              
-        }        
+            put8Pixel(xO, yO, x, y);  
+        }
     }
-    
-    public void drawEllipseMidPoint(double xO, double yO, double a, double b)
-    {
-        xO = xO*step + width/2;
-        yO = height/2 - yO*step;
-        a = a*step;
-        b = b*step;
-        
+
+    public void drawEllipseMidPoint(double xO, double yO, double a, double b) {
+        xO = xO * step + width / 2;
+        yO = height / 2 - yO * step;
+        a = a * step;
+        b = b * step;
+
         double x, y, fx, fy, a2, b2, p, q;
         x = 0;
         y = b;
-        a2 = a*a;
-        b2 = b*b;
+        a2 = a * a;
+        b2 = b * b;
         fx = 0;
-        fy = 2*a2*y;
+        fy = 2 * a2 * y;
         put4Pixel(xO, yO, x, y);
-        p = Math.round(b2 - a2*b + a2/4);
-        
+        p = Math.round(b2 - a2 * b + a2 / 4);
+
         int count = 0;
-        while (fx < fy)
-        {
+        while (fx < fy) {
             count++;
             x++;
-            fx = fx + 2*b2;
-            if (p < 0)
-            {
-                p = p + b2*(2*x + 3);
-            }
-            else
-            {
+            fx = fx + 2 * b2;
+            if (p < 0) {
+                p = p + b2 * (2 * x + 3);
+            } else {
                 y--;
-                p = p + b2*(2*x + 3) + a2*(2 - 2*y);
-                fy = fy - 2*a2;
+                p = p + b2 * (2 * x + 3) + a2 * (2 - 2 * y);
+                fy = fy - 2 * a2;
             }
-            if (count >= 11 && count <= 15)
-            {
-                if (count == 15)
-                {
+            if (count >= 11 && count <= 15) {
+                if (count == 15) {
                     count = 0;
                 }
                 continue;
             }
             put4Pixel(xO, yO, x, y);
         }
-        
+
         int count1 = 0;
-        q = Math.round(b2*(x + 0.5)*(x + 0.5) + a2*(y-1)*(y-1) - a2*b2);
-        while (y > 0)
-        {
+        q = Math.round(b2 * (x + 0.5) * (x + 0.5) + a2 * (y - 1) * (y - 1) - a2 * b2);
+        while (y > 0) {
             count1++;
             y--;
-            fy = fy - 2*a2;
-            if (q < 0)
-            {
+            fy = fy - 2 * a2;
+            if (q < 0) {
                 x++;
-                q = q + b2*(2*x + 2) + a2*(3 - 2*y);
-                fx = fx + 2*b2;
+                q = q + b2 * (2 * x + 2) + a2 * (3 - 2 * y);
+                fx = fx + 2 * b2;
+            } else {
+                q = q + a2 * (3 - 2 * y);
             }
-            else
-            {
-                q = q + a2*(3 - 2*y);
-            }
-            if (count1 >= 11 && count1 <= 15)
-            {
-                if (count1 == 15)
-                {
+            if (count1 >= 11 && count1 <= 15) {
+                if (count1 == 15) {
                     count1 = 0;
                 }
                 continue;
             }
             put4Pixel(xO, yO, x, y);
         }
-    }    
-    
-    public void drawGlobular()
-    {
+    }
+
+    public void drawGlobular() {
         double xO = Double.valueOf(xOHC_TF.getText());
         double yO = Double.valueOf(yOHC_TF.getText());
         double zO = Double.valueOf(zOHC_TF.getText());
-        
+
         double xO1 = cavalierProjection(xO, yO);
         double yO1 = cavalierProjection(zO, yO);
-        
+
         double r = Double.valueOf(r_TF.getText());
 
         putPixel3D(xO1, yO1);
-        putText3D("O", (int)xO, (int)yO, (int)zO);
-        
+        putText3D("O", (int) xO, (int) yO, (int) zO);
+
         drawCircleMidPoint(xO1, yO1, r);
-        
+
         double a = r;
-        double b = r*(1-Math.sqrt(2)/2);
-        
+        double b = r * (1 - Math.sqrt(2) / 2);
+
         drawEllipseMidPoint(xO1, yO1, a, b);
-    }    
+    }
+
+    // Vẽ hình xe
+    public void drawCar() {
+        height = panel2D.getBounds().height; // Lay chieu cao cua Panel
+        width = panel2D.getBounds().width; // Lay chieu dai cua Panel
+
+        Graphics2D g1 = (Graphics2D) g3D.create();
+        g1.setStroke(new BasicStroke(3));
+        g1.setColor(Color.BLACK);
+        // Vẽ Mui Xe
+        g1.drawLine(width / 6, height / 6, width / 4, height / 6);
+        g1.drawLine(width / 6, height / 6, width / 6, height / 4);
+        g1.drawLine(width / 4, height / 6, width / 4, height / 4);
+        
+        
+        // Vẽ Thân Xe
+        g1.drawLine((width / 6) - 45, height / 4, (width / 4)+45, height / 4); 
+        g1.drawLine((width / 6) - 45, height / 4, (width / 6) - 45, (height / 4)+30);
+        g1.drawLine((width / 4)+45, height / 4, (width / 4)+45, (height / 4)+30);
+        g1.drawLine((width / 6) - 45, (height / 4)+30, (width / 4)+45, (height / 4)+30);
+        
+        // bánh Xe
+        g1.fillOval((width / 6) - 35, (height / 4)+15, 30, 30);
+        g1.fillOval((width / 4), (height / 4)+15, 30, 30);
+    }
 }
